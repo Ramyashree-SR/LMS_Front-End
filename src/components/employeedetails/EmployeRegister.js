@@ -3,10 +3,25 @@ import React, { useState } from 'react'
 import { Avatar, Breadcrumb, Dropdown, Layout, Menu, Space } from "antd";
 import { DownOutlined } from '@ant-design/icons';
 import DashBoard from './../mentor/DashBoard';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ResetPassword from '../ResetPassword';
 const { Header, Sider, Content } = Layout;
 
 function EmployeRegister() {
+
+let navigate = useNavigate();
+
+  const handleLogout=()=>{
+   navigate('/')
+ }
+
+ let navigateToDashBoarrd = () => {
+  navigate("dashboarrd");
+};
+let navigateToProfile = () => {
+  navigate("profile");
+};
+
   //resetpassword
   const [show,setShow] =useState(false);
    const handleclose=()=>setShow(false);
@@ -26,7 +41,7 @@ function EmployeRegister() {
           },
         {
           key: '3',
-          label:<p className="dropdown">Logout</p>
+          label:<p className="dropdown" onClick={handleLogout}>Logout</p>
           
         },
        
@@ -82,8 +97,8 @@ function EmployeRegister() {
               
                 
               <div>
-                 <Link to={"./DashBoarrd"}><button className="bg-white" id="dashboard"><p id="db"><b>DashBoard</b></p></button></Link> 
-                 <Link to={"./StepperForm"}><button className="bg-white" id="dashboard"><p id="db"><b>Profile</b></p></button></Link> 
+                 <Link to={"./DashBoarrd"}><button className="bg-white" id="dashboard" onClick={navigateToDashBoarrd}><p id="db"><b>DashBoard</b></p></button></Link> 
+                 <Link to={"./StepperForm"}><button className="bg-white" id="dashboard" onClick={navigateToProfile}><p id="db"><b>Profile</b></p></button></Link> 
                 </div>
 
                </Sider>
@@ -105,7 +120,7 @@ function EmployeRegister() {
               </Breadcrumb>
             
             <Content>
-                
+                <ResetPassword setShow={setShow} handleclose={handleclose}/>
             </Content>
             </Layout>
           </Layout>

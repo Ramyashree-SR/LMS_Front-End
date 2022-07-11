@@ -68,13 +68,13 @@ function App() {
 
       {/* <BrowserRouter>
       <EmployeRegister/>
-      <StepperForm/>
+      
       <Routes>
       <Route path="/DashBoarrd" element={<DashBoarrd /> }/>
       <Route path="/StepperForm" element={<StepperForm /> }/>
       </Routes>
       </BrowserRouter> */}
-      
+      {/* <StepperForm/> */}
       </BrowserRouter>
      </div>
      
