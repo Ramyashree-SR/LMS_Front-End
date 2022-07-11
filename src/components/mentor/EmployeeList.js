@@ -248,12 +248,12 @@ function EmployeeList() {
   };
 
   return (
-    <div style={{marginTop:"-500px"}}>
+    <div style={{marginTop:"50px"}}>
       <Layout>
         <div
           style={{
             backgroundColor: "#FFFFFF",
-            marginLeft: "90px",
+            marginLeft: "10px",
             display: "flex",
           }}
         >
@@ -316,7 +316,7 @@ function EmployeeList() {
             columns={columns}
             dataSource={data}
             style={{
-              marginLeft: "90px",
+              marginLeft: "10px",
             }}
           />
         </Content>

@@ -200,12 +200,12 @@ function BatchList() {
 
    
     return (
-      <div style={{marginTop:"-500px"}}>
+      <div style={{marginTop:"50px"}}>
         <Layout style={{ marginLeft: "10px", marginBottom: "1px", }}>
           <div
             style={{
               background: "#FFFFFF",
-              marginLeft: "80px",
+              marginLeft: "10px",
               display: "flex",
             }}
           >
@@ -229,7 +229,7 @@ function BatchList() {
               columns={columns}
               dataSource={data}
               style={{
-                marginLeft: "80px",
+                marginLeft: "10px",
               }}
             />
 

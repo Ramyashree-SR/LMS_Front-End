@@ -7,11 +7,12 @@ import AddMentor from "./AddMentor";
 import Request from "./Request";
 import "./admin.css"
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import Password from "antd/lib/input/Password";
 const { Header, Sider, Content } = Layout;
 
 function AdminPage() {
 
- let navigate=useNavigate()
+  let navigate=useNavigate();
 
  const handleLogout=()=>{
   navigate('/')

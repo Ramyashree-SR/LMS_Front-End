@@ -1,14 +1,47 @@
 import { Button, Form, Input } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
+  const [loginData,setLoginData] = useState({
+    employeeId:"",
+    password:""
+})
+
+//login data
+let LoginDetails=(e)=>{
+  setLoginData({
+    ...loginData,
+    [e.target.name]:e.target.value,
+  });
+ };
+
+ 
+ //do not refresh
+ let handleSubmit = (e) => {
+  e.preventDefault();
+};
+
 
   let navigate=useNavigate()
 
   const handleLogin=()=>{
-    navigate('/admin')
+    console.log(loginData);
+    
+  
+    if(loginData.employeeId==="admin" && loginData.password==="admin"){
+       navigate('/admin')
+    }
+    else if(loginData.employeeId==="mentor" && loginData.password==="smile"){
+      navigate('/mentor')
+      }
+    else if(loginData.employeeId==="employee" && loginData.password==="silence"){
+        navigate('/employeedetails')
+        }
+        else{
+          navigate('/')
+        }
   }
   
 
@@ -76,7 +109,7 @@ function LoginPage() {
              layout="vertical">
             <Form.Item
               label="EmployeeID"
-              name="employeeid"
+              name="employeeId"
               requiredMark="optional"
               rules={[
                 {
@@ -85,8 +118,14 @@ function LoginPage() {
                 },
               ]}
               className="login"
+              onChange={(e) => {
+                LoginDetails(e);
+              }}
+              onSubmit={handleSubmit}
             >
-              <Input />
+              <Input name="employeeId" value={loginData.employeeId}  onChange={(e) => {
+                LoginDetails(e);
+              }}/>
             </Form.Item>
 
             <Form.Item
@@ -100,8 +139,10 @@ function LoginPage() {
                 },
               ]}
               className="login"
-            >
-              <Input.Password />
+              >
+              <Input.Password name="password" value={loginData.password} onChange={(e) => {
+                LoginDetails(e);
+              }} />
             </Form.Item>
 
             <Form.Item
