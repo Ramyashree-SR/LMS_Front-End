@@ -43,17 +43,19 @@ function AdminPage() {
             placeholder="Search Mentor/Employee"
             style={{
               width: "500px",
-              height: "0px",
+              height: "10px",
               padding: "10px",
               backgroundColor: "white",
               fontSize: "small",
               marginLeft: "200px",
-            }}
+            }} 
+            prefix={<img src="./assets/searchbar.png" alt="no" />}
+
           />
 
           <Button
             type="button"
-            style={{ background: "#FFFFFF", marginLeft: "200px" ,color:"black"}}
+            style={{ background: "#FFFFFF", marginLeft: "250px" ,color:"black"}}
              className="submit" onClick={handleLogout}>
             Logout
           </Button>

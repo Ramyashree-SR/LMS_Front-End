@@ -10,6 +10,10 @@ import BatchList from "./BatchList";
 const { Header, Sider, Content } = Layout;
 function MentorList() {
   let navigate = useNavigate();
+
+  const handleLogout=()=>{
+   navigate('/')
+ }
   let navigateToDashBoard = () => {
     navigate("dashboard");
   };
@@ -29,7 +33,7 @@ function MentorList() {
         },
         {
           key: "3",
-          label: <p className="dropdown">Logout</p>,
+          label: <p className="dropdown" onClick={handleLogout}>Logout</p>,
         },
       ]}
     />
