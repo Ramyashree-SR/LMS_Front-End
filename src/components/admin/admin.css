@@ -1,0 +1,48 @@
+#sidebatch{
+background-image: url("/assets/batch.png");
+background-repeat: no-repeat;
+background-size: 50%;
+background-position-x: center;
+border-radius: 10px;
+border: none;
+height: 70px;
+width:70px;
+
+}
+#sidebatch:hover{
+    color: #075575;
+} 
+#addbatch{
+    color: #075575;
+       
+}
+#sidementor{
+    background-image: url("/assets/Mentor.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position-x: center;
+    border-radius: 10px;
+    border: none;
+    height:70px;
+    width:70px
+}
+#addmentor{
+    color: #075575;
+    
+  }
+#siderequest{
+    background-image: url("/assets/Request.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 50%;
+    border-radius: 10px;
+    border: none;
+    height:70px;
+    width:70px
+}
+#request{
+    color: #1f617b;
+    
+}
+
+

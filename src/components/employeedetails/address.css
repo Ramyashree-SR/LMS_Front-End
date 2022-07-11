@@ -1,0 +1,10 @@
+.anticon anticon-plus-circle svg {
+    color: black;
+}
+.addbutton{
+    margin-left: 900px;
+    border: none;
+    background: none;
+
+    color:#086288;
+}

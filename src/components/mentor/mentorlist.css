@@ -1,0 +1,5 @@
+.dropdown:hover{
+    transform: scale(1.5,1.5);
+    margin-left: 20px;
+    color: #075575;
+}

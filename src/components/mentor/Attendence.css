@@ -1,0 +1,6 @@
+button.ant-switch.ant-switch-small.ant-switch-checked{
+    background: green !important;
+}
+button.ant-switch{
+    background: red !important;
+}
