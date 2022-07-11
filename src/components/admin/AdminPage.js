@@ -41,16 +41,16 @@ function AdminPage() {
           <input
             type="text"
             placeholder="Search Mentor/Employee"
-            style={{
-              width: "500px",
-              height: "10px",
-              padding: "10px",
-              backgroundColor: "white",
-              fontSize: "small",
-              marginLeft: "200px",
-            }} 
+            // style={{
+            //   width: "500px",
+            //   height: "10px",
+            //   padding: "10px",
+            //   backgroundColor: "white",
+            //   fontSize: "small",
+            //   marginLeft: "200px",
+            // }} 
             prefix={<img src="./assets/searchbar.png" alt="no" />}
-
+             className="mainsearch"
           />
 
           <Button
@@ -75,7 +75,7 @@ function AdminPage() {
             <div>
               <Link to={"./AddBatch"}>
                 <Button id="sidebatch" className="bg-white"  style={{marginLeft:"5px"}} onClick={navigateToAddBatch}><br/>
-                  <p id="addbatch"  style={{marginTop:"30px"}}><b>Batch</b></p>
+                  <p id="addbatch"  style={{marginTop:"20px"}}><b>Batch</b></p>
                 </Button>
               </Link>
               <br />
@@ -83,7 +83,7 @@ function AdminPage() {
               <Link to={"./AddMentor"}>
                 <Button className="bg-white" id="sidementor"style={{marginLeft:"5px"}} onClick={navigateToAddMentor}>
                <br/>
-                  <p id="addmentor" style={{marginTop:"30px"}}><b>Mentor</b></p>
+                  <p id="addmentor" style={{marginTop:"20px"}}><b>Mentor</b></p>
                 </Button>
               </Link>
               <br />
@@ -91,7 +91,7 @@ function AdminPage() {
               <Link to={"./Request"}>
                 <Button className="bg-white" id="siderequest" style={{marginLeft:"5px"}}>
                   <br />
-                 <p id="request"  style={{marginTop:"30px"}}  onClick={navigateToRequest}><b >Request</b></p>
+                 <p id="request"  style={{marginTop:"20px"}}  onClick={navigateToRequest}><b >Request</b></p>
                 </Button>
               </Link>
               <br />
@@ -102,7 +102,8 @@ function AdminPage() {
           // style={{
           //   padding: "0 12px 12px",
           // }}
-          >
+          > 
+          <Content>
             <Breadcrumb
               style={{
                 margin: "10px",
@@ -112,9 +113,8 @@ function AdminPage() {
             >
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>Batch</Breadcrumb.Item>
-            </Breadcrumb>
-
-            <Content>
+              </Breadcrumb>
+            
               <Button
                 style={{
                   height: "60px",

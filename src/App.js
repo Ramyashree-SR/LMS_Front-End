@@ -24,10 +24,9 @@ import ResetPassword from './components/ResetPassword';
 
 function App() {
   return (
-
-    <BrowserRouter>
     <div className="App">
-      
+    
+    <BrowserRouter>
       <Routes>
         <Route path="/"  element={<LoginPage/>}/>
         <Route path="/admin/*"  element={<AdminPage/>}/>
@@ -76,9 +75,9 @@ function App() {
       </Routes>
       </BrowserRouter> */}
       
-      
+      </BrowserRouter>
      </div>
-     </BrowserRouter>
+     
   );
 }
 

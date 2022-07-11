@@ -44,5 +44,13 @@ width:70px;
     color: #1f617b;
     
 }
+.mainsearch{
+    width: 500px;
+    height: 10px;
+    padding: 10px;
+    background-color: white;
+    font-size: small;
+     margin-left: 200px;
+}
 
 

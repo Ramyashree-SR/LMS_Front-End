@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Layout, Button, Form, Modal, Input, Select, Space } from "antd";
+import { Layout, Button, Form, Modal, Input, Select, Space, Breadcrumb } from "antd";
 import { Content, Header } from "antd/lib/layout/layout";
 import { Table } from "antd";
 import { useState } from "react";
@@ -198,7 +198,7 @@ function Request() {
             <input
               type="text"
               placeholder="Search"
-              style={{ marginLeft: "10px" }}
+              style={{ marginLeft: "100px" ,width:"300px"}}
             />
           </div>
           <Content>
@@ -207,7 +207,7 @@ function Request() {
                 marginBottom:-5,
               }}
             ></div> */}
-
+             
             <Table
               rowSelection={rowSelection}
               columns={columns}

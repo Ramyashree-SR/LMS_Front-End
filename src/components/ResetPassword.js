@@ -6,7 +6,7 @@ import { Form, Input, Space } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import "./Resetpassword.css";
 
-function ResetPassword() {
+function ResetPassword(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

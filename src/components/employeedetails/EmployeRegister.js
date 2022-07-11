@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Avatar, Breadcrumb, Dropdown, Layout, Menu, Space } from "antd";
 import { DownOutlined } from '@ant-design/icons';
 import DashBoard from './../mentor/DashBoard';
 import { Link } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
+
 function EmployeRegister() {
+  //resetpassword
+  const [show,setShow] =useState(false);
+   const handleclose=()=>setShow(false);
+
+  //dropdown
   const menu = (
     <Menu
       items={[
