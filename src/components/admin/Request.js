@@ -183,12 +183,12 @@ function Request() {
     // const hasSelected = selectedRowKeys.length > 0;
 
     return (
-      <div style={{ marginTop: "-450px" }}>
+      <div style={{marginTop:"-50px"}}>
         <Layout style={{ marginLeft: "10px" }}>
           <div
             style={{
               backgroundColor: "#FFFFFF",
-              marginLeft: "80px",
+              marginLeft: "10px",
               display: "flex",
             }}
           >
@@ -212,7 +212,7 @@ function Request() {
               rowSelection={rowSelection}
               columns={columns}
               dataSource={dataSource}
-              style={{ marginLeft: "80px" }}
+              style={{ marginLeft: "10px" }}
             />
           </Content>
         </Layout>

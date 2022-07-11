@@ -6,10 +6,26 @@ import AddBatch from "./AddBatch";
 import AddMentor from "./AddMentor";
 import Request from "./Request";
 import "./admin.css"
-import { Link } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 
 function AdminPage() {
+
+ let navigate=useNavigate()
+
+ const handleLogout=()=>{
+  navigate('/')
+}
+  let navigateToAddBatch=()=>{
+    navigate("addbatch")
+  }
+  let navigateToAddMentor=()=>{
+    navigate("addmentor")
+  }
+  let navigateToRequest=()=>{
+    navigate("request")
+  }
+
   return (
     <div>
       <Layout>
@@ -38,7 +54,7 @@ function AdminPage() {
           <Button
             type="button"
             style={{ background: "#FFFFFF", marginLeft: "200px" ,color:"black"}}
-             className="submit">
+             className="submit" onClick={handleLogout}>
             Logout
           </Button>
 
@@ -53,90 +69,17 @@ function AdminPage() {
               height: "500px",
             }}
           >
-            {/* <Button
-                  style={{
-                    height: "60px",
-                    width: "60px",
-                    marginLeft: "10px",
-                  
-                  }}
-                >
-                  <img
-                    src="./assets/batch.png"
-                    alt="batchimage"
-                    style={{ marginLeft: "-4px" }}
-                  />
-                </Button>
-                <h6
-                  style={{
-                    fontSize: "small",
-                    marginLeft: "20px",
-                   
-                  }}
-                >
-                  Batch
-                </h6>
-
-               
-                <Button
-                  style={{
-                    height: "60px",
-                    width: "60px",
-                    marginLeft: "10px",
-                   
-                  }}
-                >
-                  <img
-                    src="./assets/Mentor.png"
-                    alt="batchimage"
-                    style={{ marginLeft: "-4px" }}
-                  />
-                </Button>
-                <h6
-                  style={{
-                    fontSize: "small",
-                    marginLeft: "15px",
-                    
-                  }}
-                >
-                  Mentor
-                </h6>
-              
-
-                <Button
-                  style={{
-                    height: "60px",
-                    width: "60px",
-                    marginLeft: "10px",
-                    marginTop: "10px",
-                  }}
-                >
-                  {/* <img
-                    src="./assets/Request.png"
-                    alt="batchimage"
-                    style={{ marginLeft: "-4px" }}
-                  /> */}
-            {/* </Button>
-                <h6
-                  style={{
-                    fontSize: "small",
-                    marginLeft: "15px",
-                    marginTop: "15px",
-                  }}
-                >
-                  Request
-                </h6>  */}
-
+           
             <div>
               <Link to={"./AddBatch"}>
-                <Button id="sidebatch" className="bg-white"  style={{marginLeft:"5px"}}><br/>
+                <Button id="sidebatch" className="bg-white"  style={{marginLeft:"5px"}} onClick={navigateToAddBatch}><br/>
                   <p id="addbatch"  style={{marginTop:"30px"}}><b>Batch</b></p>
                 </Button>
               </Link>
               <br />
               <br/>
               <Link to={"./AddMentor"}>
-                <Button className="bg-white" id="sidementor"style={{marginLeft:"5px"}}>
+                <Button className="bg-white" id="sidementor"style={{marginLeft:"5px"}} onClick={navigateToAddMentor}>
                <br/>
                   <p id="addmentor" style={{marginTop:"30px"}}><b>Mentor</b></p>
                 </Button>
@@ -146,7 +89,7 @@ function AdminPage() {
               <Link to={"./Request"}>
                 <Button className="bg-white" id="siderequest" style={{marginLeft:"5px"}}>
                   <br />
-                 <p id="request"  style={{marginTop:"30px"}}><b >Request</b></p>
+                 <p id="request"  style={{marginTop:"30px"}}  onClick={navigateToRequest}><b >Request</b></p>
                 </Button>
               </Link>
               <br />
@@ -177,6 +120,12 @@ function AdminPage() {
                   marginLeft: "10px",
                 }}
               ></Button>
+
+              <Routes>
+                 <Route path='addbatch' element={<AddBatch/>}/>
+                 <Route path='addmentor' element={<AddMentor/>}/>
+                 <Route path='request' element={<Request/>}/>
+              </Routes>
             </Content>
           </Layout>
         </Layout>

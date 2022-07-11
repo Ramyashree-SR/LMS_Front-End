@@ -24,14 +24,26 @@ import ResetPassword from './components/ResetPassword';
 
 function App() {
   return (
+
+    <BrowserRouter>
     <div className="App">
-      {/* <LoginPage/> */}
+      
+      <Routes>
+        <Route path="/"  element={<LoginPage/>}/>
+        <Route path="/admin/*"  element={<AdminPage/>}/>
+        <Route path="/mentor/*"  element={<MentorList/>}/>
+        <Route path="/employeedetails/*"  element={<EmployeRegister/>}/>
+      </Routes>
+
+
+
+     {/* <LoginPage/> */}
       {/* <Login/> */}
       {/* <AdminPage/> */}
       {/* <AddMentor/> */}
       {/* <AddBatch/> */}
       {/* <Request/> */}
-      <ResetPassword/> 
+      {/* <ResetPassword/>  */}
 
       {/* <BrowserRouter>
       <AdminPage/>
@@ -66,6 +78,7 @@ function App() {
       
       
      </div>
+     </BrowserRouter>
   );
 }
 

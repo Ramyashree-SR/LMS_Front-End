@@ -223,7 +223,7 @@ const handleChange = (value) => {
     };
 // const hasSelected = selectedRowKeys.length > 0;
     return (    
-      <div style={{marginTop:"-450px"}}>
+      <div style={{marginTop:"-50px"}}>
         {/* <div
           style={{
             marginBottom: 12,
@@ -232,7 +232,7 @@ const handleChange = (value) => {
           }}
         > */}
          <Layout style={{ marginLeft: "10px" }}>
-          <div style={{  background:"#FFFFFF",marginLeft: "80px",display:"flex"}}>
+          <div style={{  background:"#FFFFFF",marginLeft: "10px",display:"flex"}}>
            <h6 style={{ color: "rgb(235, 200, 26)", marginLeft: "10px" }}>
             Batch List
           </h6>
@@ -295,7 +295,7 @@ const handleChange = (value) => {
           rowSelection={rowSelection}
           columns={columns}
           dataSource={data}
-          style={{marginLeft:"80px"}}
+          style={{marginLeft:"10px"}}
         />
 
         <Modal

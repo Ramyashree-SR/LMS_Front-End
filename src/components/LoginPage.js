@@ -1,8 +1,16 @@
 import { Button, Form, Input } from "antd";
 import React from "react";
 import "./Login.css";
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
+
+  let navigate=useNavigate()
+
+  const handleLogin=()=>{
+    navigate('/admin')
+  }
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -68,6 +76,7 @@ function LoginPage() {
             <Form.Item
               label="EmployeeID"
               name="employeeid"
+              requiredMark="optional"
               rules={[
                 {
                   required: true,
@@ -82,6 +91,7 @@ function LoginPage() {
             <Form.Item
               label="Password"
               name="password"
+              requiredMark="optional"
               rules={[
                 {
                   required: true,
@@ -100,7 +110,7 @@ function LoginPage() {
               }}
             >
                <div >
-              <button type="login" className="d" >Login </button>
+              <button type="login" className="d" onClick={handleLogin} >Login </button>
               <button type="cancel" className="d1">Cancel</button> 
               </div>
             </Form.Item>

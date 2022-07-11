@@ -140,9 +140,9 @@ function AddMentor() {
     };
     // const hasSelected = selectedRowKeys.length > 0;
     return (
-      <div style={{marginTop:"-450px"}}>
+      <div stle={{marginTop:"50px"}}>
         <Layout style={{ marginLeft: "10px" }}>
-          <div style={{ backgroundColor: "#FFFFFF", marginLeft: "80px" ,display:"flex"}}>
+          <div style={{ backgroundColor: "#FFFFFF", marginLeft: "10px" ,display:"flex"}}>
         <h6 style={{ color: "rgb(235, 200, 26)", marginLeft: "10px" }}>
             Mentor List
           </h6>
@@ -205,7 +205,7 @@ function AddMentor() {
           rowSelection={rowSelection}
           columns={columns}
           dataSource={data}
-          style={{marginLeft:"80px"}}
+          style={{marginLeft:"10px"}}
         />
 
 <Modal
