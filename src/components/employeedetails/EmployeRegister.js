@@ -153,6 +153,7 @@ function EmployeRegister() {
                 <Route path="dashboarrd" element={<DashBoarrd/>} />
                 <Route path="stepperform" element={<StepperForm/>} />
               </Routes>
+              
               <ResetPassword setShow={setShow} handleclose={handleclose} />
             </Content>
           </Layout>

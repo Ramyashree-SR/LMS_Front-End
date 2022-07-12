@@ -100,6 +100,15 @@
 .sub{
     font-size:x-small;
     color:white;
-    margin-top: 150px;
+    margin-top: 5px;
     margin-left: 20px;
+}
+.pass{
+    font-size:small;
+    /* color:white; */
+    margin-top: 100px;
+    margin-left: 120px;
+    border:none;
+    background: none;
+    color: #FAA81D;
 }

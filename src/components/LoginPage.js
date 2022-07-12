@@ -44,6 +44,9 @@ let LoginDetails=(e)=>{
         }
   }
   
+  // const handleReset=()=>{
+  //     navigate('/stepperform')
+  // };
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -157,6 +160,12 @@ let LoginDetails=(e)=>{
               </div>
             </Form.Item>
           </Form>
+
+
+
+           <div>
+            <button className="pass" onClick={handleReset}>Change Password</button>
+           </div>
 
           <div>
             <p className='sub'><pre>Copyright &copy;2018Alerico.com  Terms&condition|Privacy Policy</pre></p>

@@ -145,6 +145,7 @@ function MentorList() {
                 <Route path="dashboard" element={<DashBoard />} />
                 <Route path="batchlist" element={<BatchList />} />
               </Routes>
+              
               <ResetPassword setShow={setShow} handleclose={handleclose}/>
             </Content>
           </Layout>

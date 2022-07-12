@@ -7,7 +7,8 @@ import { Dropdown, Menu, Space } from "antd";
 // import {DownOutlined} from '@ant-design/icons';
 import Attendence from "./Attendence";
 import "./batchlist.css"
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import EmployeeList from './EmployeeList';
 
 function BatchList() {
 
@@ -20,7 +21,7 @@ function BatchList() {
    let navigate=useNavigate();
 
    let navigateToEmployeeList=()=>{
-     navigate("/EmployeeList")
+     navigate("/employeelist")
    }
   const menu = (
     <Menu
@@ -279,6 +280,10 @@ function BatchList() {
             }}
           /> */}
             {/* </Modal> */}
+
+            <Routes>
+                <Route path="employeelist" element={<EmployeeList/>} />
+                </Routes>
           </Content>
         </Layout>
         <Attendence lgShow={lgShow} handleClose={handleClose} />
