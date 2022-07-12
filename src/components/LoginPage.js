@@ -44,9 +44,9 @@ let LoginDetails=(e)=>{
         }
   }
   
-  // const handleReset=()=>{
-  //     navigate('/stepperform')
-  // };
+  const handlePassword=()=>{
+      navigate('/stepperform')
+  };
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -164,7 +164,7 @@ let LoginDetails=(e)=>{
 
 
            <div>
-            <button className="pass" onClick={handleReset}>Change Password</button>
+            <button className="pass" onClick={handlePassword}>Change Password</button>
            </div>
 
           <div>

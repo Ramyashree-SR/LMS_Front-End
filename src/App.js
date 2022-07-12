@@ -61,8 +61,8 @@ function App() {
      </BrowserRouter>  */}
 
       
-      {/* <Attendence/> 
-       <EmployeeList/> */}
+      {/* <Attendence/>  */}
+       <EmployeeList/>
 
 
       {/* <BrowserRouter>
