@@ -7,16 +7,16 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import "./Resetpassword.css";
 
 function ResetPassword(props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
-  const handleHide = () =>{
-    props.setShow(false);
+  const handleClose = () =>{
+    setShow(false);
   }
   const handleShow = () =>setShow(true);
 
   return (
     <div>
-      <Modal show={ true}  onHide={handleHide}>
+      <Modal show={show}  onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title id="data">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -51,7 +51,7 @@ function ResetPassword(props) {
         </Modal.Body>
         <Modal.Footer>
             <div>
-            <Button id="changestate" onClick={handleHide} style={{alignItems:"center"}}>
+            <Button id="changestate" onClick={handleClose} style={{alignItems:"center"}}>
             Change
           </Button>
           </div>  

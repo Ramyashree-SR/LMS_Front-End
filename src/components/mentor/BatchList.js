@@ -17,7 +17,8 @@ function BatchList() {
   };
 
    //Navigate to nextpage
-   let navigate=useNavigate()
+   let navigate=useNavigate();
+
    let navigateToEmployeeList=()=>{
      navigate("/EmployeeList")
    }

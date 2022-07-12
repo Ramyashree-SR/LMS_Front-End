@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar, Breadcrumb, Dropdown, Layout, Menu, Space } from "antd";
 import { Button } from "antd";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { DownOutlined } from "@ant-design/icons";
 import DashBoard from "./DashBoard";
 import BatchList from "./BatchList";
+import ResetPassword from "../ResetPassword";
 // import "./mentorlist.css"
 
 const { Header, Sider, Content } = Layout;
 function MentorList() {
+
+  //reset password
+  const [show,setShow] =useState(false);
+   const handleclose=()=>setShow(false);
+
+   //navigate to next page
   let navigate = useNavigate();
 
   const handleLogout=()=>{
@@ -138,6 +145,7 @@ function MentorList() {
                 <Route path="dashboard" element={<DashBoard />} />
                 <Route path="batchlist" element={<BatchList />} />
               </Routes>
+              <ResetPassword setShow={setShow} handleclose={handleclose}/>
             </Content>
           </Layout>
         </Layout>
