@@ -18,6 +18,10 @@ import DashBoarrd from './components/employeedetails/DashBoarrd';
 import LoginPage from './components/LoginPage';
 import ResetPassword from './components/ResetPassword';
 
+// import Chart from './components/Chart'/;
+import Stepper from './components/Stepper';
+import Data from './components/Data';
+
 
 
 
@@ -62,7 +66,7 @@ function App() {
 
       
       {/* <Attendence/>  */}
-       <EmployeeList/>
+       {/* <EmployeeList/> */}
 
 
       {/* <BrowserRouter>
@@ -74,7 +78,11 @@ function App() {
       </Routes>
       </BrowserRouter> */}
       {/* <StepperForm/> */}
+
+      
       </BrowserRouter>
+      {/* <Stepper/> */}
+      <Data/>
      </div>
      
   );
