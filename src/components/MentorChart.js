@@ -10,7 +10,7 @@ const MentorChart = () => {
         labels:["Male","Female"],
         
         datasets:[{
-          label:"Mock",
+          label:"",
           backgroundColor:["#FAA81D","#075575"],
           data:[100,140,134,121,40],
           borderWidth:3,
@@ -18,13 +18,22 @@ const MentorChart = () => {
           borderColor:["#FAA81D","#075575"],
           cutoutPercentage: 40
           }],
-      }
+          
+          }
+      
 
   return (
     <div  id="charts">
 
          <div id="chartboxes" >
-            <Doughnut data={gender}/>
+            <Doughnut data={gender} 
+            options={{
+            title: {
+            text: "Gender"
+            },
+           
+        }}
+            />
         </div>
       
        

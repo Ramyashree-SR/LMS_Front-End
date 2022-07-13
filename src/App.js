@@ -84,8 +84,10 @@ function App() {
       
       </BrowserRouter>
       {/* <Stepper/> */}
-      <Data/>
-      <MentorChart/>
+      {/* <Data/> */}
+      {/* <MentorChart/> */}
+
+      
      </div>
      
   );
