@@ -21,8 +21,9 @@ function BatchList() {
    let navigate=useNavigate();
 
    let navigateToEmployeeList=()=>{
-     navigate("/employeelist")
+     navigate("/employee");
    }
+
   const menu = (
     <Menu
       items={[
@@ -235,7 +236,7 @@ function BatchList() {
               }}
             />
 
-            {/* <Modal
+          {/* <Modal
               title="Attendence(20 mar 2020)"
               visible={isEditing}
               okText="Submit"
@@ -254,7 +255,7 @@ function BatchList() {
                 });
                 resetEditing();
               }}
-            > */}
+            >  */}
             {/* <Input
             value={editingStudent.BatchName}
             onChange={(e) => {
@@ -282,8 +283,8 @@ function BatchList() {
             {/* </Modal> */}
 
             <Routes>
-                <Route path="employeelist" element={<EmployeeList/>} />
-                </Routes>
+                <Route path='/employee' element={<EmployeeList />}/>
+            </Routes>
           </Content>
         </Layout>
         <Attendence lgShow={lgShow} handleClose={handleClose} />

@@ -35,6 +35,7 @@ function App() {
         <Route path="/admin/*"  element={<AdminPage/>}/>
         <Route path="/mentor/*"  element={<MentorList/>}/>
         <Route path="/employeedetails/*"  element={<EmployeRegister/>}/>
+        <Route path="employee"  element={<EmployeeList/>}/>
       </Routes>
 
 
@@ -82,7 +83,7 @@ function App() {
       
       </BrowserRouter>
       {/* <Stepper/> */}
-      <Data/>
+      {/* <Data/> */}
      </div>
      
   );

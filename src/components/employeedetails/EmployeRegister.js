@@ -26,7 +26,7 @@ function EmployeRegister() {
 
   //resetpassword
   const [show, setShow] = useState(false);
-  const handleclose = () => setShow(false);
+  const handleClose = () => setShow(false);
 
   //dropdown
   const menu = (
@@ -154,7 +154,7 @@ function EmployeRegister() {
                 <Route path="stepperform" element={<StepperForm/>} />
               </Routes>
               
-              <ResetPassword setShow={setShow} handleclose={handleclose} />
+              <ResetPassword setShow={setShow} handleclose={handleClose} />
             </Content>
           </Layout>
         </Layout>

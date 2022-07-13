@@ -9,8 +9,7 @@ const Stepper = () => {
         label:"Mock",
         backgroundColor:"#FAA81D",
         data:[100,140,134,121,40],
-        // data:["avg","above avg","good","Excellent"]
-        // fill:true,
+        
         },
       {
         label:"Re-Mock",

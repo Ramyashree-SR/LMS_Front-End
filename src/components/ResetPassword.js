@@ -10,7 +10,7 @@ function ResetPassword(props) {
   const [show, setShow] = useState(true);
 
   const handleClose = () =>{
-    props.setShow(false);
+    setShow(false);
   }
   const handleShow = () =>setShow(true);
 

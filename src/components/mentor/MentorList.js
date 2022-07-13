@@ -13,7 +13,7 @@ function MentorList() {
 
   //reset password
   const [show,setShow] =useState(false);
-   const handleclose=()=>setShow(false);
+   const handleClose=()=>setShow(false);
 
    //navigate to next page
   let navigate = useNavigate();
@@ -146,7 +146,7 @@ function MentorList() {
                 <Route path="batchlist" element={<BatchList />} />
               </Routes>
               
-              <ResetPassword setShow={setShow} handleclose={handleclose}/>
+              <ResetPassword setShow={setShow} handleclose={handleClose}/>
             </Content>
           </Layout>
         </Layout>
