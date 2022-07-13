@@ -21,6 +21,7 @@ import ResetPassword from './components/ResetPassword';
 // import Chart from './components/Chart'/;
 import Stepper from './components/Stepper';
 import Data from './components/Data';
+import MentorChart from './components/MentorChart';
 
 
 
@@ -83,7 +84,8 @@ function App() {
       
       </BrowserRouter>
       {/* <Stepper/> */}
-      {/* <Data/> */}
+      <Data/>
+      <MentorChart/>
      </div>
      
   );

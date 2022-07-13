@@ -1,0 +1,9 @@
+#charts{
+    display:flex;
+    border:0px solid black;
+}
+#chartboxes{
+    width:400px;
+    border:1px solid black;
+    border-radius: 5px 5px;
+}

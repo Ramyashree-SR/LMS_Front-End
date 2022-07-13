@@ -1,0 +1,11 @@
+#chartData{
+    display:flex;
+    border:0px solid black;
+    
+}
+
+#chartbox{
+    width:400px;
+    border:1px solid black;
+    border-radius: 10px 10px;
+}
