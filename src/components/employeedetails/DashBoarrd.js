@@ -1,6 +1,9 @@
 import React from 'react'
 import { Bar,Doughnut ,PolarArea,Line} from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+import { Paper } from '@mui/material';
+
+
 
 
 const DashBoard=()=>{
@@ -10,6 +13,7 @@ const mockratings = {
             label: 'Mock',
             backgroundColor:"#FAA81D",
             data:[100,140,134,121,40],
+            
        },
 {
      label:"Re-Mock",
@@ -21,31 +25,33 @@ const mockratings = {
 
 
 return (
-  <div style={{display:"flex"}}>
-    
-     <div  >
-      <Bar data={mockratings} />
+  <div >
+      <Paper>
+      <div style={{display:"flex"}}>
+      <div style={{width:"300px",height:"200px"}} >
+      <Bar data={mockratings} style={{width:"600px"}} />
       </div>
+      
 
+      
      <div >
       <Line data={mockratings} />
       </div>
-     
-      
-      <div>
+     </div>
+      </Paper>
+
+      <Paper >
+        <div style={{display:"flex"}}>
+      <div >
       <Doughnut data={mockratings}/>
       </div>
-      
       
        <div >
       <PolarArea data={mockratings}/>
       </div>
+      </div>
+      </Paper>
       
-     
-      
-
-     
-     
   </div>
 )
 
