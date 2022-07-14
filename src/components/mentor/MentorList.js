@@ -94,7 +94,7 @@ function MentorList() {
           </div>
           <Menu theme="light" />
         </Header>
-        <Layout style={{ height: "550px" }}>
+        <Layout style={{ height: "700px" }}>
           <Sider
             width={80}
             style={{ backgroundColor: "#FFFFFF", marginLeft: "0px" }}
