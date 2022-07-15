@@ -8,16 +8,23 @@ import { Dropdown, Menu, Space } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 
 import "./employeelist.css";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import GiveRatingModel from "./GiveRating";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import GiveRating from "./GiveRating";
+import Data from "../Data";
 // import { Form }from 'react-bootstrap';
 // import { Modal} from 'react-bootstrap';
 
 const { Content } = Layout;
 
 function EmployeeList() {
+
+  let navigate=useNavigate();
+
+  let navigateToData=()=>{
+    navigate("/data");
+  }
 
   const [isModelVisible, setIsModelVisible] = useState(false);
 
@@ -201,9 +208,7 @@ function EmployeeList() {
               <img
               src="./assets1/data/Xnix-Line-Right Arrow.png"
               alt="rightarrow"
-              onClick={() => {
-                onEditRating(record);
-              }}/>
+              onClick={navigateToData}/>
 
                 </>
                )
@@ -319,6 +324,10 @@ function EmployeeList() {
               marginLeft: "10px",
             }}
           />
+
+          <Routes>
+            <Route path='/data' element={<Data/>}/>
+          </Routes>
         </Content>
         <GiveRating lgShow={lgShow} handleClose={handleLgClose}/>
       </Layout>

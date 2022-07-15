@@ -24,25 +24,11 @@ const mockratings = {
 
   return (
     <div  id="chartData">
-       <div id="chartbox" >
-        <Bar data={mockratings} />
-        </div>
+       
 
         <div id="chartbox">
         <Line data={mockratings} />
         </div>
-       
-        
-        <div id="chartbox" >
-        <Doughnut data={mockratings}/>
-        </div>
-
-        <div id="chartbox">
-        <PolarArea data={mockratings}/>
-        </div>
-        
-
-
        
     </div>
   )

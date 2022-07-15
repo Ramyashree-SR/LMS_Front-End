@@ -67,10 +67,6 @@ const DashBoard = () => {
                 }
              }]
             }}
-            
-             
-              
-             
             style={{ width: "400px",height:"300px" }}/>
         </Paper>
 
@@ -158,9 +154,7 @@ const DashBoard = () => {
 
         </Paper>
 
-
-
-       </div>
+      </div>
            </Paper>
     </div>
   );
