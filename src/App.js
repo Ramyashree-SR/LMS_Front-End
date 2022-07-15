@@ -85,7 +85,7 @@ function App() {
       
       </BrowserRouter>
       {/* <Stepper/> */}
-      {/* <Data/> */}
+      <Data/>
       {/* <MentorChart/> */}
 
       
