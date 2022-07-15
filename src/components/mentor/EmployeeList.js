@@ -23,7 +23,7 @@ function EmployeeList() {
   let navigate=useNavigate();
 
   let navigateToData=()=>{
-    navigate("/data");
+    navigate("/studentdata");
   }
 
   const [isModelVisible, setIsModelVisible] = useState(false);
@@ -208,7 +208,8 @@ function EmployeeList() {
               <img
               src="./assets1/data/Xnix-Line-Right Arrow.png"
               alt="rightarrow"
-              onClick={navigateToData}/>
+              onClick={navigateToData}
+              />
 
                 </>
                )
@@ -326,7 +327,7 @@ function EmployeeList() {
           />
 
           <Routes>
-            <Route path='/data' element={<Data/>}/>
+            <Route path='/studentdata' element={<Data/>}/>
           </Routes>
         </Content>
         <GiveRating lgShow={lgShow} handleClose={handleLgClose}/>
