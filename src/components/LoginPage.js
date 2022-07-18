@@ -1,7 +1,8 @@
 import { Button, Form, Input } from "antd";
 import React, { useState } from "react";
 import "./Login.css";
-import { useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import ResetPassword from "./ResetPassword";
 
 function LoginPage() {
   const [loginData,setLoginData] = useState({
@@ -30,7 +31,7 @@ let LoginDetails=(e)=>{
     console.log(loginData);
     
   
-    if(loginData.employeeId==="admin" && loginData.password==="admin"){
+    if(loginData.employeeId==="admin" && loginData.password==="patience"){
        navigate('/admin')
     }
     else if(loginData.employeeId==="mentor" && loginData.password==="smile"){
@@ -43,9 +44,9 @@ let LoginDetails=(e)=>{
           navigate('/')
         }
   }
-  
-  const handlePassword=()=>{
-      navigate('/stepperform')
+  const [reset, setReset] = useState(true)
+  const handleChange=()=>{
+      setReset(false);
   };
 
   const onFinish = (values) => {
@@ -142,10 +143,11 @@ let LoginDetails=(e)=>{
                 },
               ]}
               className="login"
+              
               >
               <Input.Password name="password" value={loginData.password} onChange={(e) => {
                 LoginDetails(e);
-              }} />
+              }} placeholder="Enter Password"/>
             </Form.Item>
 
             <Form.Item
@@ -164,7 +166,10 @@ let LoginDetails=(e)=>{
 
 
            <div>
-            <button className="pass" onClick={handlePassword}>Change Password</button>
+            <button className="pass" onClick={handleChange}>Change Password</button>
+            <Routes>
+              <Route path="/resetpassword" element={<ResetPassword/>}/>
+            </Routes>
            </div>
 
           <div>

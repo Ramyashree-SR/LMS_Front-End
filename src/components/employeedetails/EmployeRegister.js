@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 import { Avatar, Breadcrumb, Dropdown, Layout, Menu, Space } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined,BellFilled } from "@ant-design/icons";
 import DashBoard from "./../mentor/DashBoard";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import ResetPassword from "../ResetPassword";
 import DashBoarrd from "./DashBoarrd";
 import StepperForm from "./StepperForm";
+import BreadCrumbs from "../BreadCrumbs";
 const { Header, Sider, Content } = Layout;
 
 function EmployeRegister() {
@@ -78,6 +79,10 @@ function EmployeRegister() {
             prefix={<img src="./assets/searchbar.png" alt="no" />}
           />
 
+          
+            <BellFilled style={{marginLeft:"200px"}}/>
+          
+
           <div
             className="btn btn-rounded"
             style={{ marginLeft: "1000px", marginTop: "-130px" }}
@@ -135,7 +140,7 @@ function EmployeRegister() {
               padding: "0 12px 12px",
             }}
           >
-            <Breadcrumb
+            {/* <Breadcrumb
               style={{
                 margin: "10px",
                 padding: "0px 0px",
@@ -145,8 +150,8 @@ function EmployeRegister() {
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>DashBoard</Breadcrumb.Item>
               <Breadcrumb.Item>Profile</Breadcrumb.Item>
-            </Breadcrumb>
-
+            </Breadcrumb> */}
+             <BreadCrumbs/>
             <Content>
 
             <Routes>

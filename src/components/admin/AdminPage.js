@@ -8,6 +8,7 @@ import Request from "./Request";
 import "./admin.css"
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Password from "antd/lib/input/Password";
+import BreadCrumbs from "../BreadCrumbs";
 const { Header, Sider, Content } = Layout;
 
 function AdminPage() {
@@ -104,17 +105,10 @@ function AdminPage() {
           //   padding: "0 12px 12px",
           // }}
           > 
+
+          <BreadCrumbs/>
           <Content>
-            <Breadcrumb
-              style={{
-                margin: "10px",
-                // padding: "0px 0px",
-                // maxHeight: 600,
-              }}
-            >
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>Batch</Breadcrumb.Item>
-              </Breadcrumb>
+          
             
               <Button
                 style={{

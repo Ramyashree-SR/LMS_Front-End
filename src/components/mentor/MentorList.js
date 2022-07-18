@@ -6,6 +6,7 @@ import { DownOutlined } from "@ant-design/icons";
 import DashBoard from "./DashBoard";
 import BatchList from "./BatchList";
 import ResetPassword from "../ResetPassword";
+import BreadCrumbs from "../BreadCrumbs";
 // import "./mentorlist.css"
 
 const { Header, Sider, Content } = Layout;
@@ -129,7 +130,8 @@ function MentorList() {
               padding: "0 12px 12px",
             }}
           >
-            <Breadcrumb
+            <BreadCrumbs/>
+            {/* <Breadcrumb
               style={{
                 margin: "10px",
                 padding: "0px 0px",
@@ -138,7 +140,7 @@ function MentorList() {
             >
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>Request List</Breadcrumb.Item>
-            </Breadcrumb>
+            </Breadcrumb> */}
 
             <Content>
               <Routes>
