@@ -52,5 +52,8 @@ width:70px;
     font-size: small;
      margin-left: 200px;
 }
-
+.tech{
+    border-radius: 10px;
+    background-color: #1f617b;
+}
 

@@ -26,7 +26,7 @@ function AddMentor() {
     setIsModalVisible(true);
   };
 
-  const handleCreate = () => {
+  const handleOk = () => {
     setIsModalVisible(false);
   };
 
@@ -80,6 +80,20 @@ function AddMentor() {
       },
     },
   ];
+  const onAddStudent = () => {
+    const randomNumber = parseInt(Math.random() * 1000);
+    const newStudent = {
+      id: randomNumber,
+      batch_name: "Name " + randomNumber,
+      mentor_name: randomNumber + "Name",
+      technologies: "technologies " + randomNumber,
+      start_date:"date"+randomNumber,
+      end_date:"date"+randomNumber,
+    };
+    setDataSource((pre) => {
+      return [...pre, newStudent];
+    });
+  };
   const onDeleteStudent = (record) => {
     Modal.confirm({
       title: "Are you sure, you want to delete this student record?",
@@ -101,20 +115,20 @@ function AddMentor() {
     setIsEditing(false);
     setEditingStudent(null);
   };
-  const data = [];
+  // const data = [];
 
-  for (let i = 1; i <= 5; i++) {
-    data.push({
-      key: i,
-      No: ` ${i}`,
-      MentorName: ` Ramya${i}`,
-      BatchName: `Uplift ${i}`,
-      EmployeeID: ` No.12456${i}`,
-      EmailID: `reghfrjfn123@gmail.com ${i}`,
-      Skills: "react,java",
-      Action: "",
-    });
-  }
+  // for (let i = 1; i <= 5; i++) {
+  //   data.push({
+  //     key: i,
+  //     No: ` ${i}`,
+  //     MentorName: ` Ramya${i}`,
+  //     BatchName: `Uplift ${i}`,
+  //     EmployeeID: ` No.12456${i}`,
+  //     EmailID: `reghfrjfn123@gmail.com ${i}`,
+  //     Skills: "react,java",
+  //     Action: "",
+  //   });
+  // }
 
   {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -156,7 +170,7 @@ function AddMentor() {
 
           <Button
             type="primary"
-            onClick={showModal}
+            onClick={()=>{showModal();}}
             style={{
               backgroundColor: "#ffc53d",
               color: "black",
@@ -168,7 +182,8 @@ function AddMentor() {
           <Modal
             title="Add New Mentor"
             visible={isModalVisible}
-            onCreate={handleCreate}
+            okText="Create"
+            onOk={()=>{handleOk();onAddStudent()}}
             onCancel={handleCancel}
           >
             <Form layout="vertical">
@@ -185,7 +200,7 @@ function AddMentor() {
               <br />
            <Select
              mode="multiple"
-        // size={size}
+        //  size={size}
         placeholder="select"
         // defaultValue={['java', 'java2','python','c','c++']}
         onChange={handleChange}
@@ -206,14 +221,14 @@ function AddMentor() {
         <Table
           rowSelection={rowSelection}
           columns={columns}
-          dataSource={data}
+          dataSource={dataSource}
           style={{marginLeft:"10px"}}
         />
 
 <Modal
       title="Edit Student"
           visible={isEditing}
-          okText="Create"
+          okText="Save"
           onCancel={() => {
             resetEditing();
           }}
@@ -229,7 +244,33 @@ function AddMentor() {
             });
             resetEditing();
           }}
-        >
+         >
+         
+          {/* <Input
+            value={editingStudent?.name}
+            onChange={(e) => {
+              setEditingStudent((pre) => {
+                return { ...pre, name: e.target.value };
+              });
+            }}
+          />
+           <Input
+            value={editingStudent?.email}
+            onChange={(e) => {
+              setEditingStudent((pre) => {
+                return { ...pre, email: e.target.value };
+              });
+            }}
+          />
+          <Input
+            value={editingStudent.address}
+            onChange={(e) => {
+              setEditingStudent((pre) => {
+                return { ...pre, address: e.target.value };
+              });
+            }}
+          /> */}
+        
 </Modal>
     
       </Content>

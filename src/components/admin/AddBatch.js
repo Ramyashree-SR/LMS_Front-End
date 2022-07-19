@@ -13,21 +13,22 @@ import {
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Content, Header } from "antd/lib/layout/layout";
-import { Layout } from 'antd';
+import { Layout } from "antd";
 
 const { Option } = Select;
 
 function AddBatch() {
-
   const children = [];
 
-for (let i = 1; i < 10; i++) {
-  children.push(<Option key={i.toString(10) + i}>{i.toString(10) + i}</Option>);
-}
+  for (let i = 1; i < 10; i++) {
+    children.push(
+      <Option key={i.toString(10) + i}>{i.toString(10) + i}</Option>
+    );
+  }
 
-const handleChange = (value) => {
-  console.log(`selected ${value}`);
-};
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
 
   const { RangePicker } = DatePicker;
 
@@ -49,15 +50,15 @@ const handleChange = (value) => {
   const [editingStudent, setEditingStudent] = useState(null);
   const [dataSource, setDataSource] = useState([
     {
-    no:"",
-    batch_id:"",
-    batch_name:"",
-    mentor_name:"",
-    technologies:"",
-    Startdate:"",
-    enddate:""
-  },
-]);
+      no: "",
+      batch_id: "",
+      batch_name: "",
+      mentor_name: "",
+      technologies: "",
+      Startdate: "",
+      enddate: "",
+    },
+  ]);
   //   {
 
   //     No:"1",
@@ -103,27 +104,28 @@ const handleChange = (value) => {
       dataIndex: "MentorName",
     },
     {
-      key:"technologies",
+      key: "technologies",
       title: "Technologies",
       dataIndex: "Technologies",
-      render:() => (
+      render: () => (
         <>
           <Select
-           mode="multiple"
-           allowClear
-           style={{
-        width: '100%',
-        backgroundColor:"#075575"
-      }}
-      placeholder="Please select"
-      // defaultValue={['a10', 'c12']}
-      onChange={handleChange}
-    >
-      {children}
-      </Select>
-      </>
-      )},
-    
+            mode="multiple"
+            allowClear
+            style={{
+              width: "100%",
+              backgroundColor: "#075575",
+            }}
+            placeholder="Please select"
+            // defaultValue={['a10', 'c12']}
+            onChange={handleChange}
+          >
+            {children}
+          </Select>
+        </>
+      ),
+    },
+
     {
       title: "Startdate",
       dataIndex: "Startdate",
@@ -163,9 +165,9 @@ const handleChange = (value) => {
       id: randomNumber,
       batch_name: "Name " + randomNumber,
       mentor_name: randomNumber + "Name",
-      technologies: "technologies " + randomNumber,
-      start_date:"date"+randomNumber,
-      end_date:"date"+randomNumber,
+      technologies: "Technologies " + randomNumber,
+      start_date: "Date" + randomNumber,
+      end_date: "Date" + randomNumber,
     };
     setDataSource((pre) => {
       return [...pre, newStudent];
@@ -246,9 +248,17 @@ const handleChange = (value) => {
       selectedRowKeys,
       onChange: onSelectChange,
     };
-// const hasSelected = selectedRowKeys.length > 0;
-    return (    
-      <div style={{marginTop:"-50px"}}>
+    // const hasSelected = selectedRowKeys.length > 0;
+
+    const mentorsList = ["Satyam", "Rohan", "Saayil", "Vihan"];
+    const technologies = [
+      "React",
+      "Angular",
+      "Java+Spring Boot",
+      "Node Js+Express JS",
+    ];
+    return (
+      <div style={{ marginTop: "-50px" }}>
         {/* <div
           style={{
             marginBottom: 12,
@@ -256,74 +266,101 @@ const handleChange = (value) => {
             marginLeft:"75px"
           }}
         > */}
-         <Layout style={{ marginLeft: "10px" }}>
-          <div style={{  background:"#FFFFFF",marginLeft: "10px",display:"flex"}}>
-           <h6 style={{ color: "rgb(235, 200, 26)", marginLeft: "10px" }}>
-            Batch List
-          </h6>
-         <input type="text" placeholder="Search" style={{background:"#FFFFFF", marginLeft:"650px"}}/>
-           
-          <Button
-            type="button"
-            onClick={()=>{showModal();onAddStudent();}}
+        <Layout style={{ marginLeft: "10px" }}>
+          <div
             style={{
-              backgroundColor: "#ffc53d",
-              color: "black",
-              marginLeft: "50px",
+              background: "#FFFFFF",
+              marginLeft: "10px",
+              display: "flex",
             }}
           >
-           + New Batch
-          </Button>
-          <Modal
-            title="Add New Batch"
-            visible={isModalVisible}
-            onOk={handleOk}
-             onCancel={handleCancel}
-          >
-            <Form layout="vertical">
-              <Form.Item label="Batch Name">
-                <Input />
-              </Form.Item>
-              <Form.Item label="Mentor Name">
-                <Select>
-                  <Select.Option value="name">Rohan</Select.Option>
-                </Select>
-              </Form.Item>
-              <Form.Item label="Technologies">
-                <TreeSelect
-                  treeData={[
-                    {
-                      title: "Java",
-                      value: "Java",
-                      children: [
-                        {
-                          title: "core java",
-                          value: "core java",
-                        },
-                      ],
-                    },
-                  ]}
-                />
-              </Form.Item>
-              <Form.Item label="Start Date">
-                <DatePicker style={{width:"100%"}} dateFormat='dd/mm/yyyy'/>
-              </Form.Item>
-              <Form.Item label="End Date">
-                <DatePicker />
-              </Form.Item>
-            </Form>
-          </Modal>
+            <h6 style={{ color: "rgb(235, 200, 26)", marginLeft: "10px" }}>
+              Batch List
+            </h6>
+            <input
+              type="text"
+              placeholder="Search"
+              style={{ background: "#FFFFFF", marginLeft: "650px" }}
+            />
+
+            <Button
+              type="button"
+              onClick={() => {
+                showModal();
+              }}
+              style={{
+                backgroundColor: "#ffc53d",
+                color: "black",
+                marginLeft: "50px",
+              }}
+            >
+              + New Batch
+            </Button>
+            <Modal
+              title="Add New Batch"
+              visible={isModalVisible}
+              onOk={() => {
+                handleOk();
+                onAddStudent();
+              }}
+              onCancel={handleCancel}
+            >
+              <Form layout="vertical">
+                <Form.Item label="Batch Name">
+                  <Input />
+                </Form.Item>
+                <Form.Item label="Mentor Name">
+                  <Select>
+                    {mentorsList.map((val, idx) => {
+                      return (
+                        <Select.Option key={idx} value={val}>
+                          {val}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select>
+                </Form.Item>
+                <Form.Item label="Technologies">
+                  <Select mode="multiple" >
+                    {technologies.map((vaal, idx) => {
+                      return (
+                        <Select.Option key={idx} value={vaal}>
+                          <button
+                            style={{
+                              
+                              borderRadius: "10px",
+                              backgroundColor: "#1f617b",
+                              color: "#FFFFFF",
+                            }}
+                          >
+                            {vaal}
+                          </button>
+                        </Select.Option>
+                      );
+                    })}
+                  </Select>
+                </Form.Item>
+                <Form.Item label="Start Date">
+                  <DatePicker
+                    style={{ width: "100%" }}
+                    dateFormat="dd/mm/yyyy"
+                  />
+                </Form.Item>
+                <Form.Item label="End Date">
+                  <DatePicker />
+                </Form.Item>
+              </Form>
+            </Modal>
           </div>
           <Content>
-            
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={dataSource}
-          style={{marginLeft:"10px"}}
-        />
+            <Table
+              rowSelection={rowSelection}
+              columns={columns}
+              dataSource={dataSource}
+              style={{ marginLeft: "10px" }}
+            />
 
-        {/* <Modal
+            {/* <Modal
           title="Edit Student"
           visible={isEditing}
           okText="Save"
@@ -368,11 +405,9 @@ const handleChange = (value) => {
             }}
           />
         </Modal> */}
-
-            
-        </Content>
+          </Content>
         </Layout>
-        </div>
+      </div>
     );
   }
 }
