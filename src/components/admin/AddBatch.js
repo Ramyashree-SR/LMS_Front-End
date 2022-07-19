@@ -46,8 +46,18 @@ const handleChange = (value) => {
   };
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editingBatch, setEditingBatch] = useState(null);
-  const [dataSource, setDataSource] = useState([]);
+  const [editingStudent, setEditingStudent] = useState(null);
+  const [dataSource, setDataSource] = useState([
+    {
+    no:"",
+    batch_id:"",
+    batch_name:"",
+    mentor_name:"",
+    technologies:"",
+    Startdate:"",
+    enddate:""
+  },
+]);
   //   {
 
   //     No:"1",
@@ -133,12 +143,12 @@ const handleChange = (value) => {
           <>
             <EditOutlined
               onClick={() => {
-                onEditBatch(record);
+                onEditStudent(record);
               }}
             />
             <DeleteOutlined
               onClick={() => {
-                onDeleteBatch(record);
+                onDeleteStudent(record);
               }}
               style={{ color: "red", marginLeft: 12 }}
             />
@@ -147,26 +157,40 @@ const handleChange = (value) => {
       },
     },
   ];
-  const onDeleteBatch = (record) => {
+  const onAddStudent = () => {
+    const randomNumber = parseInt(Math.random() * 1000);
+    const newStudent = {
+      id: randomNumber,
+      batch_name: "Name " + randomNumber,
+      mentor_name: randomNumber + "Name",
+      technologies: "technologies " + randomNumber,
+      start_date:"date"+randomNumber,
+      end_date:"date"+randomNumber,
+    };
+    setDataSource((pre) => {
+      return [...pre, newStudent];
+    });
+  };
+  const onDeleteStudent = (record) => {
     Modal.confirm({
       title: "Are you sure, you want to delete this batch record?",
       okText: "Yes",
       okType: "danger",
       onOk: () => {
         setDataSource((pre) => {
-          return pre.filter((batch) => batch.id !== record.id);
+          return pre.filter((student) => student.id !== record.id);
         });
       },
     });
   };
-  const onEditBatch = (record) => {
+  const onEditStudent = (record) => {
     setIsEditing(true);
-    setEditingBatch({ ...record });
+    setEditingStudent({ ...record });
   };
 
   const resetEditing = () => {
     setIsEditing(false);
-    setEditingBatch(null);
+    setEditingStudent(null);
   };
 
   const data = [];
@@ -241,7 +265,7 @@ const handleChange = (value) => {
            
           <Button
             type="button"
-            onClick={showModal}
+            onClick={()=>{showModal();onAddStudent();}}
             style={{
               backgroundColor: "#ffc53d",
               color: "black",
@@ -282,7 +306,7 @@ const handleChange = (value) => {
                 />
               </Form.Item>
               <Form.Item label="Start Date">
-                <DatePicker />
+                <DatePicker style={{width:"100%"}} dateFormat='dd/mm/yyyy'/>
               </Form.Item>
               <Form.Item label="End Date">
                 <DatePicker />
@@ -295,55 +319,55 @@ const handleChange = (value) => {
         <Table
           rowSelection={rowSelection}
           columns={columns}
-          dataSource={data}
+          dataSource={dataSource}
           style={{marginLeft:"10px"}}
         />
 
-        <Modal
+        {/* <Modal
           title="Edit Student"
           visible={isEditing}
-          okText="Create"
+          okText="Save"
           onCancel={() => {
             resetEditing();
           }}
           onOk={() => {
             setDataSource((pre) => {
-              return pre.map((batch) => {
-                if (batch.id === editingBatch.id) {
-                  return editingBatch;
+              return pre.map((student) => {
+                if (student.id === editingStudent.id) {
+                  return editingStudent;
                 } else {
-                  return batch;
+                  return student;
                 }
               });
             });
             resetEditing();
           }}
         >
-          {/* <Input
-            value={editingStudent.BatchName}
-            onChange={(e) => {
-              setEditingStudent((pre) => {
-                return { ...pre, BatchName: e.target.value };
-              });
-            }}
-          />
-           <Input
-            value={editingStudent?.name}
-            onChange={(e) => {
-              setEditingStudent((pre) => {
-                return { ...pre, MentorName: e.target.value };
-              });
-            }}
-          />
           <Input
             value={editingStudent?.name}
             onChange={(e) => {
               setEditingStudent((pre) => {
-                return { ...pre, Technologies: e.target.value };
+                return { ...pre, name: e.target.value };
               });
             }}
-          /> */}
-        </Modal>
+          />
+           <Input
+            value={editingStudent?.email}
+            onChange={(e) => {
+              setEditingStudent((pre) => {
+                return { ...pre, email: e.target.value };
+              });
+            }}
+          />
+          <Input
+            value={editingStudent.address}
+            onChange={(e) => {
+              setEditingStudent((pre) => {
+                return { ...pre, address: e.target.value };
+              });
+            }}
+          />
+        </Modal> */}
 
             
         </Content>
