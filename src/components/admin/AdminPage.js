@@ -51,6 +51,7 @@ function AdminPage() {
             //   fontSize: "small",
             //   marginLeft: "200px",
             // }} 
+            autoFocus
             prefix={<img src="./assets/searchbar.png" alt="no" />}
              className="mainsearch"
           />
@@ -83,7 +84,7 @@ function AdminPage() {
               <br />
               <br/>
               <Link to={"./AddMentor"}>
-                <Button className="bg-white" id="sidementor"style={{marginLeft:"5px"}} onClick={navigateToAddMentor}>
+                <Button className="bg-white" id="sidementor" style={{marginLeft:"5px"}} onClick={navigateToAddMentor}>
                <br/>
                   <p id="addmentor" style={{marginTop:"20px"}}><b>Mentor</b></p>
                 </Button>

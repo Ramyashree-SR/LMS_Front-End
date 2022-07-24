@@ -18,6 +18,15 @@ import { Layout } from "antd";
 const { Option } = Select;
 
 function AddBatch() {
+  const mentorsList = ["Satyam", "Rohan", "Saayil", "Vihan"];
+  const technologies = [
+    "React",
+    "Angular",
+    "Java+Spring Boot",
+    "Node Js+Express JS",
+  ];
+
+
   const children = [];
 
   for (let i = 1; i < 10; i++) {
@@ -58,34 +67,35 @@ function AddBatch() {
       Startdate: "",
       enddate: "",
     },
+  
+    // {
+
+    //   No:"1",
+    //   BatchId:"#12435",
+    //   BatchName: 'Chandana',
+    //   MentorName:'Sayil',
+    //   Technologies:"Javascript",
+    //   Startdate:"27-10-2012",
+    //   Enddate:"10-03-2021",
+    //   Status:"Completed",
+    //   Action:""
+
+    // },
+  
+    // {
+
+    //   No:"2",
+    //   BatchId:"#12569",
+    //   BatchName: "JOHN",
+    //   MentorName:"stieve",
+    //   Technologies:"Java",
+    //   Startdate:"24-10-2017",
+    //   Enddate:"12-03-2024",
+    //   Status:"In Progress",
+    //   Action:""
+
+    // }
   ]);
-  //   {
-
-  //     No:"1",
-  //     BatchId:"#12435",
-  //     BatchName: 'Edward',
-  //     MentorName:'john',
-  //     Technologies:"Javascript",
-  //     Startdate:"27-10-2012",
-  //     Enddate:"10-03-2021",
-  //     Status:"Completed",
-  //     Action:""
-
-  //   },
-  //   {
-
-  //     No:"2",
-  //     BatchId:"#12569",
-  //     BatchName: "JOHN",
-  //     MentorName:"stieve",
-  //     Technologies:"Java",
-  //     Startdate:"24-10-2017",
-  //     Enddate:"12-03-2024",
-  //     Status:"In Progress",
-  //     Action:""
-
-  //   }
-  // ])
   const columns = [
     {
       title: "No",
@@ -108,21 +118,34 @@ function AddBatch() {
       title: "Technologies",
       dataIndex: "Technologies",
       render: () => (
-        <>
+        
           <Select
             mode="multiple"
             allowClear
             style={{
-              width: "100%",
+              width: "200px",
               backgroundColor: "#075575",
             }}
             placeholder="Please select"
-            // defaultValue={['a10', 'c12']}
             onChange={handleChange}
           >
-            {children}
-          </Select>
-        </>
+        {
+          technologies.map((val, idx) => {
+          return (
+            <Select.Option key={idx} value={val}>
+              <button
+                style={{
+                  borderRadius: "5px",
+                  backgroundColor: "#1f617b",
+                  color: "#FFFFFF",
+                }}
+              >
+                {val}
+              </button>
+            </Select.Option>
+          );
+        })}
+      </Select>
       ),
     },
 
@@ -159,6 +182,22 @@ function AddBatch() {
       },
     },
   ];
+
+  const data = [];
+  for (let i = 1; i <= 5; i++) {
+    data.push({
+      key: i,
+      No: ` ${i}`,
+      BatchId: "#567 ",
+      BatchName: `Edward ${i}`,
+      MentorName: `john ${i}`,
+      Technologies: `Javascript ${i}`,
+      Startdate: "27-10-2012",
+      Enddate: "10-03-2021",
+      Status: "In Progress",
+      Action: "",
+    });
+  }
   const onAddStudent = () => {
     const randomNumber = parseInt(Math.random() * 1000);
     const newStudent = {
@@ -195,21 +234,21 @@ function AddBatch() {
     setEditingStudent(null);
   };
 
-  const data = [];
-  for (let i = 1; i <= 5; i++) {
-    data.push({
-      key: i,
-      No: ` ${i}`,
-      BatchId: "#567 ",
-      BatchName: `Edward ${i}`,
-      MentorName: `john ${i}`,
-      Technologies: `Javascript ${i}`,
-      Startdate: "27-10-2012",
-      Enddate: "10-03-2021",
-      Status: "In Progress",
-      Action: "",
-    });
-  }
+  // const data = [];
+  // for (let i = 1; i <= 5; i++) {
+  //   data.push({
+  //     key: i,
+  //     No: ` ${i}`,
+  //     BatchId: "#567 ",
+  //     BatchName: `Edward ${i}`,
+  //     MentorName: `john ${i}`,
+  //     Technologies: `Javascript ${i}`,
+  //     Startdate: "27-10-2012",
+  //     Enddate: "10-03-2021",
+  //     Status: "In Progress",
+  //     Action: "",
+  //   });
+  // }
   // ])
   // for (let i = 1; i<=5; i++) {
   //   data.push({
@@ -248,24 +287,12 @@ function AddBatch() {
       selectedRowKeys,
       onChange: onSelectChange,
     };
-    // const hasSelected = selectedRowKeys.length > 0;
+    
 
-    const mentorsList = ["Satyam", "Rohan", "Saayil", "Vihan"];
-    const technologies = [
-      "React",
-      "Angular",
-      "Java+Spring Boot",
-      "Node Js+Express JS",
-    ];
+    
     return (
       <div style={{ marginTop: "-50px" }}>
-        {/* <div
-          style={{
-            marginBottom: 12,
-            display: "flex",
-            marginLeft:"75px"
-          }}
-        > */}
+       
         <Layout style={{ marginLeft: "10px" }}>
           <div
             style={{
@@ -328,7 +355,7 @@ function AddBatch() {
                           <button
                             style={{
                               
-                              borderRadius: "10px",
+                              borderRadius: "5px",
                               backgroundColor: "#1f617b",
                               color: "#FFFFFF",
                             }}
