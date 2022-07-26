@@ -58,15 +58,15 @@ function AddBatch() {
   const [editingStudent, setEditingStudent] = useState(null);
   const [dataSource, setDataSource] = useState([
     {
-      no: "",
-      batch_id: "",
-      batch_name: "",
-      mentor_name: "",
+      no: "1",
+      batch_id: "#324",
+      batch_name: "Chandan",
+      mentor_name: "Rohan",
       technologies: "",
-      Startdate: "",
-      enddate: "",
+      Startdate: "27-10-2012",
+      enddate: "10-03-2021",
     },
-  
+  ])
     // {
 
     //   No:"1",
@@ -94,7 +94,7 @@ function AddBatch() {
     //   Action:""
 
     // }
-  ]);
+  
   const columns = [
     {
       title: "No",
@@ -182,21 +182,21 @@ function AddBatch() {
     },
   ];
 
-  const data = [];
-  for (let i = 1; i <= 5; i++) {
-    data.push({
-      key: i,
-      No: ` ${i}`,
-      BatchId: "#567 ",
-      BatchName: `Edward ${i}`,
-      MentorName: `john ${i}`,
-      Technologies: `Javascript ${i}`,
-      Startdate: "27-10-2012",
-      Enddate: "10-03-2021",
-      Status: "In Progress",
-      Action: "",
-    });
-  }
+  // const data = [];
+  // for (let i = 1; i <= 5; i++) {
+  //   data.push({
+  //     key: i,
+  //     No: ` ${i}`,
+  //     BatchId: "#567 ",
+  //     BatchName: `Edward ${i}`,
+  //     MentorName: `john ${i}`,
+  //     Technologies: `Javascript ${i}`,
+  //     Startdate: "27-10-2012",
+  //     Enddate: "10-03-2021",
+  //     Status: "In Progress",
+  //     Action: "",
+  //   });
+  // }
   const onAddStudent = () => {
     const randomNumber = parseInt(Math.random() * 1000);
     const newStudent = {
