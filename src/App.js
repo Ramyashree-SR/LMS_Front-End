@@ -36,8 +36,8 @@ function App() {
         <Route path="/admin/*"  element={<AdminPage/>}/>
         <Route path="/mentor/*"  element={<MentorList/>}/>
         <Route path="/employeedetails/*"  element={<EmployeRegister/>}/>
-        {/* <Route path=" mentor/employee/*"  element={<EmployeeList/>}/> */}
-        {/* <Route path="/studentdata"  element={<Data/>}/> */}
+        <Route path="/employee/*"  element={<EmployeeList/>}/>
+        <Route path="/studentdata"  element={<Data/>}/>
       </Routes>
 
 

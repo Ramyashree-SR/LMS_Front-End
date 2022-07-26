@@ -283,7 +283,7 @@ function BatchList() {
             {/* </Modal> */}
 
             <Routes>
-                <Route path='mentor/employee/*' element={<EmployeeList />}/>
+                <Route path='/employee' element={<EmployeeList />}/>
             </Routes>
           </Content>
         </Layout>
