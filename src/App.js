@@ -41,12 +41,7 @@ function App() {
       </Routes>
 
 
-
- 
-
-
-
-     {/* <LoginPage/> */}
+      {/* <LoginPage/> */}
       {/* <Login/> */}
       {/* <AdminPage/> */}
       {/* <AddMentor/> */}
