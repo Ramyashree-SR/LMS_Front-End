@@ -17,6 +17,8 @@ import { Layout } from "antd";
 const { Option } = Select;
 
 function AddBatch() {
+
+  //map the addnew data at new batch
   const mentorsList = ["Satyam", "Rohan", "Saayil", "Vihan"];
   const technologies = [
     "React",
@@ -54,17 +56,20 @@ function AddBatch() {
     setIsModalVisible(false);
   };
 
+
+  //Table Data
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
   const [dataSource, setDataSource] = useState([
     {
       no: "1",
-      batch_id: "#324",
-      batch_name: "Chandan",
-      mentor_name: "Rohan",
-      technologies: "",
+      BatchId: "#324",
+      BatchName: "Chandan",
+      MentorName: "Rohan",
+      Technologies: "",
       Startdate: "27-10-2012",
-      enddate: "10-03-2021",
+      Enddate: "10-03-2021",
+      Status: "In Progress",
     },
   ])
     // {
@@ -249,22 +254,8 @@ function AddBatch() {
   //   });
   // }
   // ])
-  // for (let i = 1; i<=5; i++) {
-  //   data.push({
-  //     key: i,
-  //     No:`${i}`,
-  //     batchId:"",
-  //     Batchname: ` ${i}`,
-  //     mentorname:`${i}`,
-  //     technologies:"",
-  //     startdate:"",
-  //     endstate:"",
-  //     action:""
-
-  //   });
-  // }
-
-  {
+  
+{
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -307,6 +298,7 @@ function AddBatch() {
               type="text"
               placeholder="Search"
               style={{ background: "#FFFFFF", marginLeft: "650px" }}
+              autoFocus
             />
 
             <Button
