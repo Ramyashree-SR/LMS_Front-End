@@ -10,13 +10,36 @@ import {
   Breadcrumb,
 } from "antd";
 import { useState } from "react";
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined ,DownOutlined} from "@ant-design/icons";
 import { Content, Header } from "antd/lib/layout/layout";
-import { Layout } from "antd";
+import { Layout, Dropdown, Menu, Space, Typography } from "antd";
 
 const { Option } = Select;
 
 function AddBatch() {
+
+
+  //status data
+  const menu = (
+    <Menu
+      selectable
+      defaultSelectedKeys={['3']}
+      items={[
+        {
+          key: '1',
+          label: 'In Progress',
+        },
+        {
+          key: '2',
+          label: 'Completed',
+        },
+        {
+          key: '3',
+          label: 'To be Started',
+        },
+      ]}
+    />
+  );
 
   //map the addnew data at new batch
   const mentorsList = ["Satyam", "Rohan", "Saayil", "Vihan"];
@@ -164,6 +187,18 @@ function AddBatch() {
     {
       title: "Status",
       dataIndex: "Status",
+      render: (record) => {
+        return (
+          <>
+         <Select>
+                  <Option value="1" style={{color:"#FAA81D"}}><b>In Progress</b></Option>
+                  <Option value="2" style={{color:"green"}}><b>Completed</b></Option>
+                  <Option value="3" style={{color:"#075575"}}><b>To Be Started</b></Option>
+                </Select>
+          </>
+        );
+      },
+    
     },
     {
       title: "Actions",
