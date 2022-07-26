@@ -125,7 +125,7 @@ function AddBatch() {
               width: "200px",
               backgroundColor: "#075575",
             }}
-            placeholder="Please select"
+            // placeholder="Please select"
             onChange={handleChange}
           >
         {
