@@ -334,7 +334,8 @@ function AddBatch() {
               type="text"
               placeholder="Search"
               style={{ background: "#FFFFFF", marginLeft: "650px" }}
-              autoFocus
+              prefix={<img src="./assets/searchbar.png" alt="no" />}
+              
             />
 
             <Button

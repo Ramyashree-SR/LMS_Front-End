@@ -51,7 +51,7 @@ function AdminPage() {
             //   fontSize: "small",
             //   marginLeft: "200px",
             // }} 
-            autoFocus
+            
             prefix={<img src="./assets/searchbar.png" alt="no" />}
              className="mainsearch"
           />

@@ -225,7 +225,8 @@ function BatchList() {
                 marginLeft: "790px",
                 width:"25%"
               }}
-              prefix={<img src="./assets/searchbar.png" alt="no"/>} />
+              prefix={<img src="./assets/searchbar.png" alt="no"/>} 
+              />
           </div>
 
           <Content>
