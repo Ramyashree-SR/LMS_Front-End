@@ -251,6 +251,7 @@ function AddBatch() {
       return [...pre, newStudent];
     });
   };
+
   const onDeleteStudent = (record) => {
     Modal.confirm({
       title: "Are you sure, you want to delete this batch record?",
@@ -450,7 +451,7 @@ function AddBatch() {
             }}
           />
           <Input
-            value={editingStudent.address}
+            value={editingStudent?.address}
             onChange={(e) => {
               setEditingStudent((pre) => {
                 return { ...pre, address: e.target.value };

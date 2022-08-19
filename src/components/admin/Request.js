@@ -38,6 +38,8 @@ function Request() {
   };
 
   const [form] = Form.useForm();
+
+  const [dataSource,setDataSource] = useState([])
   const columns = [
     {
       title: "No",
@@ -138,26 +140,28 @@ function Request() {
     },
   ];
 
-  const [dataSource, setDataSource] = useState([]);
+  // const [dataSource, setDataSource] = useState([]);
   const [editingRow, setEditingRow] = useState(null);
   const data = [];
   useEffect(() => {
     const data = [];
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 2; i++) {
       data.push({
         key: i,
-        No: `1 ${i}`,
-        EmployeeId: "#234",
-        EmployeeName: `Charvi ${i}`,
-        YOP: "2019",
-        Percentage: "97",
-        Experience: "3years",
-        ContactNo: "9876543321",
+        No: ` ${i}`,
+        EmployeeId: "",
+        EmployeeName: "",
+        YOP: "",
+        Percentage: "",
+        Experience: "",
+        ContactNo: "",
         Action: "",
       });
     }
     setDataSource(data);
   }, [data]);
+
+  
   {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [loading, setLoading] = useState(false);

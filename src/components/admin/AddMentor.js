@@ -80,6 +80,8 @@ function AddMentor() {
       },
     },
   ];
+
+  //add Student data
   const onAddStudent = () => {
     const randomNumber = parseInt(Math.random() * 1000);
     const newStudent = {
@@ -94,6 +96,7 @@ function AddMentor() {
       return [...pre, newStudent];
     });
   };
+
   const onDeleteStudent = (record) => {
     Modal.confirm({
       title: "Are you sure, you want to delete this student record?",
@@ -106,6 +109,7 @@ function AddMentor() {
       },
     });
   };
+
   const onEditStudent = (record) => {
     setIsEditing(true);
     setEditingStudent({ ...record });
@@ -152,7 +156,7 @@ function AddMentor() {
       selectedRowKeys,
       onChange: onSelectChange,
     };
-    // const hasSelected = selectedRowKeys.length > 0;
+    
     return (
       <div stle={{marginTop:"50px"}}>
         <Layout style={{ marginLeft: "10px" }}>
