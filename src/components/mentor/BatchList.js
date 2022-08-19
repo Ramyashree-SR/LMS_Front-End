@@ -9,6 +9,7 @@ import Attendence from "./Attendence";
 import "./batchlist.css"
 import { Route, Routes, useNavigate } from "react-router-dom";
 import EmployeeList from './EmployeeList';
+import BreadCrumbs from './../BreadCrumbs';
 
 function BatchList() {
 
@@ -204,6 +205,7 @@ function BatchList() {
    
     return (
       <div style={{marginTop:"50px"}}>
+       
         <Layout style={{ marginLeft: "10px", marginBottom: "1px", }}>
           <div
             style={{
@@ -282,9 +284,9 @@ function BatchList() {
           /> */}
             {/* </Modal> */}
 
-            <Routes>
+            {/* <Routes>
                 <Route path='/employee' element={<EmployeeList />}/>
-            </Routes>
+            </Routes> */}
           </Content>
         </Layout>
         <Attendence lgShow={lgShow} handleClose={handleClose} />

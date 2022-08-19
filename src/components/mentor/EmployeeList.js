@@ -13,6 +13,7 @@ import GiveRatingModel from "./GiveRating";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import GiveRating from "./GiveRating";
 import Data from "../Data";
+import BreadCrumbs from "../BreadCrumbs";
 // import { Form }from 'react-bootstrap';
 // import { Modal} from 'react-bootstrap';
 
@@ -255,7 +256,8 @@ function EmployeeList() {
 
   return (
     <div style={{marginTop:"50px"}}>
-      <Layout>
+      <Layout style={{marginLeft:"100px"}}>
+      <Content>
         <div
           style={{
             backgroundColor: "#FFFFFF",
@@ -316,7 +318,7 @@ function EmployeeList() {
           </Modal>
         </div>
 
-        <Content>
+        
           <Table
             rowSelection={rowSelection}
             columns={columns}
@@ -329,8 +331,9 @@ function EmployeeList() {
           <Routes>
             <Route path='/studentdata' element={<Data/>}/>
           </Routes>
-        </Content>
+        
         <GiveRating lgShow={lgShow} handleClose={handleLgClose}/>
+        </Content> 
       </Layout>
     </div>
   );
